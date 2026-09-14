@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img" aria-labelledby="title description">
+  <title id="title">Browser request and rendering cycle</title>
+  <desc id="description">A browser requests a page from a server, receives HTML, requests linked CSS and image resources, and renders the completed page.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#315b7d"/>
+    </marker>
+    <style>
+      .box { fill: #f7fafc; stroke: #315b7d; stroke-width: 3; rx: 14; }
+      .label { fill: #17324d; font: 700 22px system-ui, sans-serif; text-anchor: middle; }
+      .detail { fill: #34495e; font: 16px system-ui, sans-serif; text-anchor: middle; }
+      .arrow { stroke: #315b7d; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .step { fill: #ffffff; stroke: #b45309; stroke-width: 2; }
+      .step-text { fill: #7c2d12; font: 700 16px system-ui, sans-serif; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect width="960" height="360" fill="#ffffff"/>
+
+  <rect class="box" x="45" y="115" width="190" height="115"/>
+  <text class="label" x="140" y="160">Browser</text>
+  <text class="detail" x="140" y="190">requests and renders</text>
+
+  <rect class="box" x="725" y="115" width="190" height="115"/>
+  <text class="label" x="820" y="160">Web server</text>
+  <text class="detail" x="820" y="190">returns resources</text>
+
+  <path class="arrow" d="M235 138 C390 65, 570 65, 725 138"/>
+  <path class="arrow" d="M725 205 C570 285, 390 285, 235 205"/>
+
+  <circle class="step" cx="380" cy="78" r="25"/>
+  <text class="step-text" x="380" y="84">1</text>
+  <text class="detail" x="500" y="45">GET /index.html</text>
+
+  <circle class="step" cx="580" cy="278" r="25"/>
+  <text class="step-text" x="580" y="284">2</text>
+  <text class="detail" x="465" y="323">HTML response</text>
+
+  <rect class="box" x="340" y="120" width="280" height="105"/>
+  <text class="label" x="480" y="156">Linked resources</text>
+  <text class="detail" x="480" y="184">styles.css · image.svg</text>
+  <text class="detail" x="480" y="208">requested after HTML parsing</text>
+</svg>
+

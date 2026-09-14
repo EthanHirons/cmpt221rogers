@@ -1,0 +1,37 @@
+Lab 01  Questions
+Ethan Hirons CMPT 221
+
+1. What information belongs in HTML, and what belongs in CSS?
+
+HTML holds the content and says what each piece of it means: which text
+is the page title, which is a heading, which items form a list, which
+words are a link, and which image belongs with which caption. It is the
+structure and the meaning.
+
+CSS holds everything about how that content looks: fonts, colors,
+spacing, widths, and how the layout changes when the window is narrow.
+CSS never adds or removes information; it only changes the presentation
+of information that is already in the HTML. That is why the stylesheet
+lives in its own file instead of inside style attributes on the elements.
+
+2. Why does the page remain understandable when CSS is disabled?
+
+Because the meaning of the page is carried by the HTML, not the styling.
+With the stylesheet turned off the browser falls back to its default
+styles, but the h1 is still the page title, the h2 elements still mark
+the three sections, the description list still pairs each technology with
+its explanation, the links are still links, and the image still has
+alternative text and a caption. The elements are also written in the
+order they should be read, so the page reads top to bottom as header,
+navigation, the three sections, then footer. 
+3. Which additional resources did the browser request after loading
+   index.html?
+
+After index.html loaded, the browser parsed it, found the references to
+other files, and made two more requests:
+
+  - styles.css                    (from the <link> in the <head>)
+  - images/web-request-cycle.svg  (from the <img> in the figure)
+
+Both returned 200 OK. The browser also requested /favicon.ico on its own,
+which returned 404 because the site does not have a favicon.

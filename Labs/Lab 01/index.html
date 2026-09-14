@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Development Field Guide | CMPT 221</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Web Development Field Guide</h1>
+      <p>
+        A short introduction to the three core browser technologies and where to
+        learn more about them.
+      </p>
+    </header>
+
+    <nav aria-label="Page sections">
+      <ul>
+        <li><a href="#browser-team">The Browser Team</a></li>
+        <li><a href="#page-request">One Page Request</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="browser-team">
+        <h2>The Browser Team</h2>
+        <p>
+          Every web page is built by three technologies that each do one job.
+        </p>
+        <dl>
+          <dt>HTML</dt>
+          <dd>
+            HTML holds the content of a page and describes what each piece of it
+            means, such as a heading, a paragraph, a list, or a link. It gives
+            the browser and assistive technology a structure to work with before
+            any styling exists.
+          </dd>
+
+          <dt>CSS</dt>
+          <dd>
+            CSS controls how that structure is presented: colors, spacing,
+            typography, and layout at different window sizes. It changes the
+            appearance of content without changing what the content is.
+          </dd>
+
+          <dt>JavaScript</dt>
+          <dd>
+            JavaScript adds behavior, letting the page respond to the user,
+            change after it has loaded, and request more data from a server. It
+            runs in the browser after the page structure is available.
+          </dd>
+        </dl>
+      </section>
+
+      <section id="page-request">
+        <h2>One Page Request</h2>
+
+        <figure>
+          <img
+            src="images/web-request-cycle.svg"
+            alt="A browser sends an HTTP request for index.html to a web server; the server responds with the HTML file, and the browser then requests the stylesheet and image files referenced in that HTML before rendering the finished page."
+          />
+          <figcaption>
+            The request and response cycle between a browser and a web server.
+          </figcaption>
+        </figure>
+
+        <p>
+          When you enter an address, the browser looks up the server's IP
+          address through DNS and opens a connection to it. It then sends an
+          HTTP GET request for <code>index.html</code>.
+        </p>
+        <p>
+          The server responds with a status code and the HTML file. The browser
+          parses that HTML from top to bottom and builds a tree of elements that
+          represents the document.
+        </p>
+        <p>
+          While parsing, the browser finds references to other files &mdash; the
+          <code>styles.css</code> stylesheet and the
+          <code>web-request-cycle.svg</code> image &mdash; and sends a separate
+          request for each one.
+        </p>
+        <p>
+          Once the stylesheet arrives, the browser matches its rules to the
+          elements, calculates the position and size of everything, and paints
+          the result to the screen. The page is now displayed.
+        </p>
+      </section>
+
+      <section id="resources">
+        <h2>Resources</h2>
+        <p>
+          These references from MDN Web Docs cover the fundamentals in more
+          depth.
+        </p>
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work"
+              >MDN: How does the Internet work?</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content"
+              >MDN: Structuring content with HTML</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics"
+              >MDN: CSS styling basics</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>CMPT 221 &mdash; Software Development II &mdash; Lab 01 coursework.</p>
+    </footer>
+  </body>
+</html>
