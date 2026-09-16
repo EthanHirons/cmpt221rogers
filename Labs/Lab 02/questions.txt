@@ -1,0 +1,17 @@
+Lab 02 - Exit Check
+Ethan Hirons, CMPT 221
+
+1. Why is data-format stored in the HTML rather than inferred from the
+   visible text?
+ Because the data format is the data and the visible text on screen is the presentation of that data. Any edit to the table would break the JS.
+
+
+2. What is the difference between aria-pressed and the CSS selected-button
+   style?
+aria-pressed is an HTML attribute that reports accessibility tree, so a screen reader announces the active filler as pressed. The CSS rule button only changes how the button looks
+
+
+3. Which browser tool would you check first if clicking a filter produced no
+   result?
+The Console. It shows any JS error that stopped the script from running. After that check the Network panel to confirm it loaded with a 200.
+

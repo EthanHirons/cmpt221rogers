@@ -1,0 +1,147 @@
+:root {
+  color-scheme: light;
+  --ink: #192b38;
+  --muted: #536673;
+  --accent: #275f83;
+  --accent-dark: #173b54;
+  --surface: #f2f6f8;
+  --line: #bccdd7;
+  --focus: #c45700;
+  --page-width: 70rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.page-width {
+  width: min(100% - 2rem, var(--page-width));
+  margin-inline: auto;
+}
+
+.site-header {
+  padding-block: 2.25rem;
+  color: #ffffff;
+  background: var(--accent-dark);
+}
+
+.site-header h1 {
+  margin-block: 0.2rem;
+  font-size: clamp(1.9rem, 5vw, 3rem);
+  line-height: 1.15;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #c8e7fb;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+main {
+  padding-block: 1.5rem 4rem;
+}
+
+section {
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-block: 1rem;
+}
+
+button {
+  padding: 0.65rem 1rem;
+  color: var(--accent-dark);
+  background: #ffffff;
+  border: 2px solid var(--accent);
+  border-radius: 0.35rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+button[aria-pressed="true"] {
+  color: #ffffff;
+  background: var(--accent);
+  border-color: var(--accent-dark);
+}
+button:hover {
+  background: var(--surface);
+  border-color: var(--accent-dark);
+}
+
+button[aria-pressed="true"]:hover {
+  background: var(--accent-dark);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.status {
+  color: var(--muted);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  caption-side: top;
+  padding-block: 0.5rem;
+  color: var(--muted);
+  font-weight: 700;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  border: 1px solid var(--line);
+}
+
+th {
+  color: #ffffff;
+  background: var(--accent-dark);
+}
+tbody tr:nth-child(even) {
+  background: var(--surface);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.site-footer {
+  padding-block: 1.25rem;
+  background: var(--surface);
+}

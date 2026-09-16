@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A filterable list of upcoming campus events."
+    />
+    <title>Campus Events Board</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="page-width">
+        <p class="eyebrow">Student Activities</p>
+        <h1>Campus Events Board</h1>
+        <p>Find an event that fits your interests and schedule.</p>
+      </div>
+    </header>
+
+    <main class="page-width">
+      <section aria-labelledby="events-heading">
+        <h2 id="events-heading">Upcoming events</h2>
+
+        <div class="filters" role="group" aria-label="Filter events by format">
+          <button type="button" data-filter="all" aria-pressed="true">
+            Show all
+          </button>
+          <button type="button" data-filter="in-person" aria-pressed="false">
+            In person
+          </button>
+          <button type="button" data-filter="online" aria-pressed="false">
+            Online
+          </button>
+        </div>
+
+        <p id="filter-status" class="status" aria-live="polite">
+          Showing all 5 events.
+        </p>
+
+        <div class="table-wrapper">
+          <table>
+            <caption>
+              Upcoming campus events, with date, format, and location.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Event</th>
+                <th scope="col">Date</th>
+                <th scope="col">Format</th>
+                <th scope="col">Location</th>
+              </tr>
+            </thead>
+            <tbody id="event-body">
+              <tr data-format="in-person">
+                <td>Web Accessibility Workshop</td>
+                <td>September 18</td>
+                <td>In person</td>
+                <td>Technology Center 201</td>
+              </tr>
+              <tr data-format="online">
+                <td>Alumni Career Conversation</td>
+                <td>September 19</td>
+                <td>Online</td>
+                <td>Video conference</td>
+              </tr>
+              <tr data-format="in-person">
+                <td>Robotics Club Open House</td>
+                <td>September 21</td>
+                <td>In person</td>
+                <td>Engineering Lab</td>
+              </tr>
+              <tr data-format="online">
+                <td>Study Abroad Information Session</td>
+                <td>September 23</td>
+                <td>Online</td>
+                <td>Video conference</td>
+              </tr>
+              <tr data-format="in-person">
+                <td>Campus Volunteer Fair</td>
+                <td>September 25</td>
+                <td>In person</td>
+                <td>Student Center</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="tips-heading">
+        <h2 id="tips-heading">Before attending</h2>
+        <ul>
+          <li>Confirm the date, location, and registration requirements.</li>
+          <li>Contact the organizer if you need an accommodation.</li>
+          <li>Check for an updated announcement on the day of the event.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-width">
+        <p>CMPT 221 Lab 2 · Interactive events board</p>
+      </div>
+    </footer>
+  </body>
+</html>
